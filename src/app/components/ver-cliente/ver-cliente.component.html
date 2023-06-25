@@ -1,0 +1,21 @@
+<div class="title">
+    <h1>Ver Cliente</h1>
+</div>
+
+
+<!-- <div *ngIf="cliente$ | async as cliente" class="container"> PIPE ASYNC -->
+    <app-spinner *ngIf="loading"></app-spinner>
+<div *ngIf="cliente != null" class="container">
+ <mat-card class="card">
+    <mat-card-title>{{ cliente.nombre }}</mat-card-title>
+    <mat-card-content>
+        <p><strong>Documento: </strong>{{ cliente.documento }}</p>
+        <p><strong>Direccion: </strong>{{ cliente.direccion }}</p>
+        <p><strong>Telefono: </strong>{{ cliente.telefono }}</p>
+        <p><strong>Email: </strong>{{ cliente.email }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button routerLink="/listClientes" mat-raised-button>Volver</button>
+    </mat-card-actions>
+ </mat-card>
+</div>
